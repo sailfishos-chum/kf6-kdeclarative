@@ -1,13 +1,24 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 0623bea9..06d3dee4 100644
+index 73bbcc5f..0a900ba1 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -31,7 +31,7 @@ find_package(KF6Config ${KF_DEP_VERSION} REQUIRED)
+@@ -5,6 +5,10 @@ set(KF_DEP_VERSION "6.18.0") # handled by release scripts
+ set(REQUIRED_QT_VERSION 6.7.0)
+ project(KDeclarative VERSION ${KF_VERSION})
+ 
++if (SAILFISHOS)
++    add_compile_definitions(Q_OS_SAILFISH)
++endif()
++
+ # Dependencies
+ include(FeatureSummary)
+ find_package(ECM 6.18.0  NO_MODULE)
+@@ -31,7 +35,7 @@ find_package(KF6Config ${KF_DEP_VERSION} REQUIRED)
  find_package(KF6GuiAddons ${KF_DEP_VERSION} REQUIRED)
  
  
--if(NOT WIN32 AND NOT APPLE AND NOT ANDROID)
-+if(NOT WIN32 AND NOT APPLE AND NOT ANDROID AND NOT SAILFISHOS)
+-if(NOT WIN32 AND NOT APPLE AND NOT ANDROID AND NOT HAIKU)
++if(NOT WIN32 AND NOT APPLE AND NOT ANDROID AND NOT HAIKU AND NOT SAILFISHOS)
      find_package(KF6GlobalAccel ${KF_DEP_VERSION} REQUIRED)
      set(HAVE_KGLOBALACCEL TRUE)
  else()
