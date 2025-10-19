@@ -1,7 +1,7 @@
 %global  kf_version 6.6.0
 
 Name:    kf6-kdeclarative
-Version: 6.6.0
+Version: 6.18.0
 Release: 0%{?dist}
 Summary: KDE Frameworks 6 Tier 3 addon for Qt declarative
 License: CC0-1.0 AND GPL-2.0-only AND GPL-3.0-only AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND (GPL-2.0-only OR GPL-3.0-only) AND MIT
@@ -37,12 +37,6 @@ Requires:       qt6-qtdeclarative-devel
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
-%package        doc
-Summary:        Developer Documentation files for %{name}
-BuildArch:      noarch
-%description    doc
-Developer Documentation files for %{name} for use with KDevelop or QtCreator.
-
 %prep
 %autosetup -n %{name}-%{version}/upstream -p1
 
@@ -70,7 +64,3 @@ Developer Documentation files for %{name} for use with KDevelop or QtCreator.
 %{_kf6_includedir}/KDeclarative/
 %{_kf6_libdir}/libKF6CalendarEvents.so
 %{_kf6_libdir}/cmake/KF6Declarative/
-%{_qt6_docdir}/*.tags
-
-%files doc
-%{_qt6_docdir}/*.qch
