@@ -52,6 +52,7 @@ developing applications that use %{name}.
 %doc README.md
 %license LICENSES/*.txt
 %{_kf6_libdir}/libKF6CalendarEvents.so.*
+%{_kf6_libdir}/libkquickcontrolsprivate.so.*
 %dir %{_kf6_qmldir}/org/
 %dir %{_kf6_qmldir}/org/kde/
 %{_kf6_qmldir}/org/kde/draganddrop/
